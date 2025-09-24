@@ -1,10 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqxv8j5x8x8x8"]
+[gd_scene load_steps=5 format=3 uid="uid://bqxv8j5x8x8x8"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_0x8x8"]
 [ext_resource type="Script" path="res://GameUI.gd" id="2_0x8x8"]
+[ext_resource type="Script" path="res://GameBoard.gd" id="3_0x8x8"]
+[ext_resource type="Script" path="res://Background.gd" id="4_0x8x8"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_0x8x8")
+
+[node name="Background" type="Node2D" parent="."]
+script = ExtResource("4_0x8x8")
+
+[node name="GameBoard" type="Node2D" parent="."]
+script = ExtResource("3_0x8x8")
 
 [node name="GameUI" type="Control" parent="."]
 layout_mode = 3

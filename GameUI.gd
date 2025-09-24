@@ -18,7 +18,18 @@ var current_tile = null
 func _ready():
 	main_game = get_parent()
 	modal.visible = false
+	setup_ui_styling()
 	update_ui()
+
+func setup_ui_styling():
+	# Style the modal
+	modal.modulate = Color(1, 1, 1, 0.9)
+	
+	# Style buttons
+	roll_button.modulate = Color(0.8, 1.0, 0.8)
+	modal_spend_button.modulate = Color(0.8, 1.0, 0.8)
+	modal_skip_button.modulate = Color(1.0, 0.8, 0.8)
+	modal_close_button.modulate = Color(0.8, 0.8, 1.0)
 
 func update_ui():
 	money_label.text = "Money: ₹" + str(main_game.player_money)

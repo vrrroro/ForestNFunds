@@ -99,6 +99,13 @@ func setup_ui():
 	game_ui.modal_spend_button.pressed.connect(_on_modal_spend_pressed)
 	game_ui.modal_skip_button.pressed.connect(_on_modal_skip_pressed)
 	game_ui.modal_close_button.pressed.connect(_on_modal_close_pressed)
+	
+	# Setup visual game board
+	var game_board = $GameBoard
+	game_board.update_tiles(tiles)
+	
+	# Setup plant sprites
+	setup_plant_sprites()
 
 func roll_dice():
 	if dice_rolls_remaining <= 0 or game_ended:
@@ -107,6 +114,10 @@ func roll_dice():
 	var roll = randi() % 6 + 1  # 1-6 dice roll
 	dice_rolls_remaining -= 1
 	player_position = (player_position + roll) % 24
+	
+	# Update visual board
+	var game_board = $GameBoard
+	game_board.update_player_position(player_position)
 	
 	# Handle tile landing
 	land_on_tile()
@@ -130,6 +141,9 @@ func add_plant_growth(category, amount):
 	# Ensure growth doesn't go below 0
 	if plants[category] < 0:
 		plants[category] = 0
+	
+	# Update visual representation
+	update_plant_visuals()
 
 func get_plant_stage(growth):
 	if growth >= 75:
@@ -190,3 +204,35 @@ func _on_modal_skip_pressed():
 func _on_modal_close_pressed():
 	var game_ui = $GameUI
 	game_ui._on_close_button_pressed()
+
+func setup_plant_sprites():
+	# Create plant sprites for each category
+	var plant_container = $PlantContainer
+	if not plant_container:
+		plant_container = Node2D.new()
+		plant_container.name = "PlantContainer"
+		add_child(plant_container)
+	
+	# Position plants in a row
+	var start_x = 50
+	var spacing = 100
+	
+	for i in range(PlantCategory.size()):
+		var plant_sprite = Node2D.new()
+		plant_sprite.position = Vector2(start_x + i * spacing, 100)
+		plant_sprite.add_script(load("res://PlantSprite.gd"))
+		plant_container.add_child(plant_sprite)
+		
+		# Set initial plant data
+		var category_name = plant_categories[PlantCategory.values()[i]].name
+		plant_sprite.set_growth(0, category_name)
+
+func update_plant_visuals():
+	var plant_container = $PlantContainer
+	if plant_container:
+		var children = plant_container.get_children()
+		for i in range(min(children.size(), PlantCategory.size())):
+			var plant_sprite = children[i]
+			var category = PlantCategory.values()[i]
+			var category_name = plant_categories[category].name
+			plant_sprite.set_growth(plants[category], category_name)
