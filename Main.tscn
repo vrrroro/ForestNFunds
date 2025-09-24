@@ -1,0 +1,86 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqxv8j5x8x8x8"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_0x8x8"]
+[ext_resource type="Script" path="res://GameUI.gd" id="2_0x8x8"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_0x8x8")
+
+[node name="GameUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("2_0x8x8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameUI/VBoxContainer"]
+layout_mode = 2
+
+[node name="MoneyLabel" type="Label" parent="GameUI/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Money: ₹5000"
+
+[node name="DiceRollsLabel" type="Label" parent="GameUI/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Rolls: 24"
+
+[node name="RollButton" type="Button" parent="GameUI/VBoxContainer"]
+layout_mode = 2
+text = "Roll Dice"
+
+[node name="PlantsContainer" type="VBoxContainer" parent="GameUI/VBoxContainer"]
+layout_mode = 2
+
+[node name="Modal" type="Panel" parent="GameUI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = 150.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameUI/Modal"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+
+[node name="Title" type="Label" parent="GameUI/Modal/VBoxContainer"]
+layout_mode = 2
+text = "Tile Title"
+horizontal_alignment = 1
+
+[node name="Text" type="RichTextLabel" parent="GameUI/Modal/VBoxContainer"]
+layout_mode = 2
+text = "Tile description text goes here."
+
+[node name="SpendButton" type="Button" parent="GameUI/Modal/VBoxContainer"]
+layout_mode = 2
+text = "Spend"
+
+[node name="SkipButton" type="Button" parent="GameUI/Modal/VBoxContainer"]
+layout_mode = 2
+text = "Skip"
+
+[node name="CloseButton" type="Button" parent="GameUI/Modal/VBoxContainer"]
+layout_mode = 2
+text = "Close"
