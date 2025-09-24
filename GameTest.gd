@@ -42,11 +42,11 @@ func test_tile_system():
 	var gamble_count = 0
 	
 	for tile in main.tiles:
-		if tile.type == main.TileType.CATEGORY:
+		if tile.type == 0:  # CATEGORY
 			category_count += 1
-		elif tile.type == main.TileType.INVESTMENT:
+		elif tile.type == 1:  # INVESTMENT
 			investment_count += 1
-		elif tile.type == main.TileType.GAMBLE:
+		elif tile.type == 2:  # GAMBLE
 			gamble_count += 1
 	
 	assert(category_count == 20, "Should have 20 category tiles")

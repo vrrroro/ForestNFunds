@@ -1,99 +1,79 @@
-# Forest 'n' Funds 🎮🌱
+# Forest 'n' Funds
 
-A strategic board game where every financial decision you make nurtures growth. Invest wisely, trade smart, and watch your forest flourish—or wither—based on your money moves. The goal: balance wealth and nature to become the ultimate eco-tycoon.
+A board game built in Godot where players manage money and grow different types of plants by making strategic spending decisions.
 
-## 🎲 Game Rules
+## Game Overview
 
-### Core Flow
-1. **Start**: Player begins with ₹5000 and 24 dice rolls
-2. **Roll**: Roll dice → move that many tiles along the 24-tile path
-3. **Land**: Modal pops up with tile details and options:
-   - **Category tiles** (Food/Health/Education/Travel/Luxury) → choose Spend or Skip
-   - **Investment tiles** (2 total) → deposit ₹200 for 25% return + travel growth
-   - **Gamble tiles** (2 total) → pay ₹100 for 50% win/lose chance
-4. **Skip Penalty**: Skip 3 times in a row → random plant loses 5 growth
-5. **Plants**: Growth 0-100 with 4 stages (seed, sapling, plant, full-flowered)
-6. **End**: After 24 rolls, win if total growth ≥ 300 OR 2+ plants full-flowered AND money ≥ 0
+Forest 'n' Funds is a strategic board game where players:
+- Start with ₹5000 and 24 dice rolls
+- Move around a circular board with 24 tiles
+- Spend money on different categories to grow plants
+- Win by achieving either:
+  - Total plant growth ≥ 300, OR
+  - At least 2 plants reach full-flowered stage (≥75 growth)
+  - While maintaining positive money
 
-### Win Conditions
-- **Win**: Total growth ≥ 300 OR at least 2 plants full-flowered (≥75) AND money ≥ 0
-- **Lose**: Money < 0 (bankruptcy) OR win condition not met at game end
+## Plant Categories
 
-## 🌱 Plant Categories
+1. **Food** - Green plants representing nutrition and sustenance
+2. **Health** - Red plants representing medical and wellness spending
+3. **Education** - Blue plants representing learning and knowledge
+4. **Travel** - Cyan plants representing exploration and experiences
+5. **Luxury** - Purple plants representing premium and indulgent spending
 
-### Food Plants
-- Farm Fresh Groceries (₹200 → +12 growth)
-- Street Snacks (₹120 → +7 growth)
-- Organic Feast (₹300 → +18 growth)
-- Family Dinner Night (₹180 → +10 growth)
+## Tile Types
 
-### Health Plants
-- Doctor Visit (₹250 → +15 growth)
-- Gym Subscription (₹200 → +12 growth)
-- Emergency Medicine (₹300 → +20 growth)
-- Yoga Retreat (₹180 → +10 growth)
+- **Category Tiles (20)**: Spend money to grow specific plant types
+- **Investment Tiles (2)**: Deposit money for 25% return at game end + travel growth
+- **Gamble Tiles (2)**: Risk money for chance of big rewards or losses
 
-### Education Plants
-- Book Purchase (₹200 → +12 growth)
-- Online Course (₹250 → +15 growth)
-- College Tuition (₹350 → +22 growth)
-- Workshop Event (₹180 → +10 growth)
+## How to Play
 
-### Travel Plants
-- Weekend Getaway (₹220 → +12 growth)
-- Long Vacation (₹350 → +20 growth)
-- Train Journey (₹180 → +9 growth)
-- Cultural Tour (₹250 → +14 growth)
+1. Click "Roll Dice" to move around the board
+2. When you land on a tile, choose to:
+   - **Spend**: Pay the cost to get the benefits
+   - **Skip**: Avoid the cost but risk penalties after 3 skips
+3. Manage your money carefully - going negative means game over
+4. Try to reach the win conditions before running out of dice rolls
 
-### Luxury Plants
-- Designer Clothes (₹280 → +12 growth)
-- Fancy Car Ride (₹320 → +14 growth)
-- Fine Dining (₹220 → +10 growth)
-- Gadget Upgrade (₹300 → +15 growth)
+## Running the Game
 
-## 🎰 Special Tiles
+1. Open the project in Godot 4.x
+2. Set `Main.tscn` as the main scene
+3. Run the project (F5 or click the play button)
+4. Use the UI to roll dice and make decisions
 
-### Investment Tiles (2 total)
-- **Investment Bank** & **Stock Market**
-- Pay ₹200 → get back ₹250 (25% profit) + 6 travel growth at game end
+## Game Mechanics
 
-### Gamble Tiles (2 total)
-- **Casino Night** & **Lottery Stall**
-- Pay ₹100 → 50% chance: +₹200 and +8 random plant growth, else -6 random plant growth
+- **Plant Growth Stages**: Seed → Sapling → Plant → Full-Flowered
+- **Skip Penalty**: After 3 consecutive skips, a random plant loses 5 growth
+- **Investment Returns**: 25% profit + 6 travel growth at game end
+- **Gambling**: 50% chance to win ₹200 + 8 random growth, or lose 6 random growth
 
-## 🚀 How to Play
+## Files Structure
 
-1. Open the project in Godot 4.5+
-2. Run the main scene (`Main.tscn`)
-3. Click "Roll Dice" to start moving
-4. When you land on a tile, choose to Spend or Skip
-5. Manage your money and plant growth carefully
-6. Try to win before running out of dice rolls!
+- `Main.gd` - Main game logic and state management
+- `GameBoard.gd` - Visual board and tile management
+- `GameUI.gd` - User interface and modal handling
+- `PlantSprite.gd` - Individual plant visual representation using PNG assets
+- `TileSprite.gd` - Individual tile visual representation using PNG assets
+- `Background.gd` - Forest background rendering
+- `PlantSprites.gd` - Plant sprite path management
+- `TileSprites.gd` - Tile sprite path management
+- `GameTest.gd` - Automated game mechanics testing
 
-## 🛠️ Technical Implementation
+## Visual Assets
 
-- **Main.gd**: Core game logic, state management, and game flow
-- **GameUI.gd**: User interface and modal system
-- **Main.tscn**: Main game scene with UI layout
-- **GameTest.gd**: Automated tests for game mechanics
+The game uses high-quality PNG sprites from the `Archive/` folder:
 
-### Key Features
-- ✅ Complete tile system with 24 unique tiles
-- ✅ Plant growth tracking with 4 growth stages
-- ✅ Modal popup system for tile interactions
-- ✅ Skip penalty system (3 skips = random plant -5 growth)
-- ✅ Win/lose condition checking
-- ✅ Investment system with 25% returns
-- ✅ Gamble system with risk/reward mechanics
-- ✅ UI for displaying game state and plant status
+### Plant Sprites
+- **5 Categories**: Food, Health, Education, Travel, Luxury
+- **4 Growth Stages**: Seed → Sapling → Plant → Full-Flowered
+- **20 Unique Sprites**: Each plant category has distinct visual progression
 
-## 🎯 Strategy Tips
+### Tile Sprites
+- **20 Category Tiles**: Unique artwork for each spending opportunity
+- **4 Special Tiles**: Investment and gambling tiles with distinct visuals
+- **Professional Artwork**: High-quality PNG assets for immersive gameplay
 
-- Balance spending on different plant categories
-- Use investments for guaranteed returns
-- Be careful with gambling - it's risky!
-- Don't skip too many tiles in a row
-- Plan your spending to avoid bankruptcy
-- Aim for either high total growth OR multiple full-flowered plants
-
-Enjoy growing your forest and managing your funds! 🌳💰
+Enjoy growing your forest and managing your funds!

@@ -27,11 +27,11 @@ enum TileType {
 
 # Plant data
 var plant_categories = {
-	PlantCategory.FOOD: {"name": "Food Plant", "growth": 0},
-	PlantCategory.HEALTH: {"name": "Health Plant", "growth": 0},
-	PlantCategory.EDUCATION: {"name": "Education Plant", "growth": 0},
-	PlantCategory.TRAVEL: {"name": "Travel Plant", "growth": 0},
-	PlantCategory.LUXURY: {"name": "Luxury Plant", "growth": 0}
+	PlantCategory.FOOD: {"name": "Food", "growth": 0},
+	PlantCategory.HEALTH: {"name": "Health", "growth": 0},
+	PlantCategory.EDUCATION: {"name": "Education", "growth": 0},
+	PlantCategory.TRAVEL: {"name": "Travel", "growth": 0},
+	PlantCategory.LUXURY: {"name": "Luxury", "growth": 0}
 }
 
 # Tile definitions
@@ -50,34 +50,34 @@ func initialize_tiles():
 	# 20 Category tiles (4 per category)
 	var category_tiles = [
 		# Food tiles
-		{"type": TileType.CATEGORY, "category": PlantCategory.FOOD, "name": "Farm Fresh Groceries", "cost": 200, "growth": 12, "modal": "Stocking up on fresh produce strengthens your garden roots."},
-		{"type": TileType.CATEGORY, "category": PlantCategory.FOOD, "name": "Street Snacks", "cost": 120, "growth": 7, "modal": "Quick bites add small nourishment to your plant."},
-		{"type": TileType.CATEGORY, "category": PlantCategory.FOOD, "name": "Organic Feast", "cost": 300, "growth": 18, "modal": "Organic choices give a bigger growth boost."},
-		{"type": TileType.CATEGORY, "category": PlantCategory.FOOD, "name": "Family Dinner Night", "cost": 180, "growth": 10, "modal": "Sharing meals fosters stronger growth."},
+		{"type": TileType.CATEGORY, "category": "Food", "name": "Farm Fresh Groceries", "cost": 200, "growth": 12, "modal": "Stocking up on fresh produce strengthens your garden roots."},
+		{"type": TileType.CATEGORY, "category": "Food", "name": "Street Snacks", "cost": 120, "growth": 7, "modal": "Quick bites add small nourishment to your plant."},
+		{"type": TileType.CATEGORY, "category": "Food", "name": "Organic Feast", "cost": 300, "growth": 18, "modal": "Organic choices give a bigger growth boost."},
+		{"type": TileType.CATEGORY, "category": "Food", "name": "Family Dinner Night", "cost": 180, "growth": 10, "modal": "Sharing meals fosters stronger growth."},
 		
 		# Health tiles
-		{"type": TileType.CATEGORY, "category": PlantCategory.HEALTH, "name": "Doctor Visit", "cost": 250, "growth": 15, "modal": "Health checkups give steady plant growth."},
-		{"type": TileType.CATEGORY, "category": PlantCategory.HEALTH, "name": "Gym Subscription", "cost": 200, "growth": 12, "modal": "Exercise nourishes your garden with steady growth."},
-		{"type": TileType.CATEGORY, "category": PlantCategory.HEALTH, "name": "Emergency Medicine", "cost": 300, "growth": 20, "modal": "Unexpected health costs but boosts resilience."},
-		{"type": TileType.CATEGORY, "category": PlantCategory.HEALTH, "name": "Yoga Retreat", "cost": 180, "growth": 10, "modal": "Peaceful routines improve long-term growth."},
+		{"type": TileType.CATEGORY, "category": "Health", "name": "Doctor Visit", "cost": 250, "growth": 15, "modal": "Health checkups give steady plant growth."},
+		{"type": TileType.CATEGORY, "category": "Health", "name": "Gym Subscription", "cost": 200, "growth": 12, "modal": "Exercise nourishes your garden with steady growth."},
+		{"type": TileType.CATEGORY, "category": "Health", "name": "Emergency Medicine", "cost": 300, "growth": 20, "modal": "Unexpected health costs but boosts resilience."},
+		{"type": TileType.CATEGORY, "category": "Health", "name": "Yoga Retreat", "cost": 180, "growth": 10, "modal": "Peaceful routines improve long-term growth."},
 		
 		# Education tiles
-		{"type": TileType.CATEGORY, "category": PlantCategory.EDUCATION, "name": "Book Purchase", "cost": 200, "growth": 12, "modal": "Knowledge feeds your garden with small but steady growth."},
-		{"type": TileType.CATEGORY, "category": PlantCategory.EDUCATION, "name": "Online Course", "cost": 250, "growth": 15, "modal": "Learning new skills boosts your growth further."},
-		{"type": TileType.CATEGORY, "category": PlantCategory.EDUCATION, "name": "College Tuition", "cost": 350, "growth": 22, "modal": "Big investment for big plant growth."},
-		{"type": TileType.CATEGORY, "category": PlantCategory.EDUCATION, "name": "Workshop Event", "cost": 180, "growth": 10, "modal": "Small events still add useful growth."},
+		{"type": TileType.CATEGORY, "category": "Education", "name": "Book Purchase", "cost": 200, "growth": 12, "modal": "Knowledge feeds your garden with small but steady growth."},
+		{"type": TileType.CATEGORY, "category": "Education", "name": "Online Course", "cost": 250, "growth": 15, "modal": "Learning new skills boosts your growth further."},
+		{"type": TileType.CATEGORY, "category": "Education", "name": "College Tuition", "cost": 350, "growth": 22, "modal": "Big investment for big plant growth."},
+		{"type": TileType.CATEGORY, "category": "Education", "name": "Workshop Event", "cost": 180, "growth": 10, "modal": "Small events still add useful growth."},
 		
 		# Travel tiles
-		{"type": TileType.CATEGORY, "category": PlantCategory.TRAVEL, "name": "Weekend Getaway", "cost": 220, "growth": 12, "modal": "Short trip, small growth refresh."},
-		{"type": TileType.CATEGORY, "category": PlantCategory.TRAVEL, "name": "Long Vacation", "cost": 350, "growth": 20, "modal": "Expensive but gives a big boost."},
-		{"type": TileType.CATEGORY, "category": PlantCategory.TRAVEL, "name": "Train Journey", "cost": 180, "growth": 9, "modal": "Affordable trip, modest growth."},
-		{"type": TileType.CATEGORY, "category": PlantCategory.TRAVEL, "name": "Cultural Tour", "cost": 250, "growth": 14, "modal": "Travel expands horizons, garden thrives."},
+		{"type": TileType.CATEGORY, "category": "Travel", "name": "Weekend Getaway", "cost": 220, "growth": 12, "modal": "Short trip, small growth refresh."},
+		{"type": TileType.CATEGORY, "category": "Travel", "name": "Long Vacation", "cost": 350, "growth": 20, "modal": "Expensive but gives a big boost."},
+		{"type": TileType.CATEGORY, "category": "Travel", "name": "Train Journey", "cost": 180, "growth": 9, "modal": "Affordable trip, modest growth."},
+		{"type": TileType.CATEGORY, "category": "Travel", "name": "Cultural Tour", "cost": 250, "growth": 14, "modal": "Travel expands horizons, garden thrives."},
 		
 		# Luxury tiles
-		{"type": TileType.CATEGORY, "category": PlantCategory.LUXURY, "name": "Designer Clothes", "cost": 280, "growth": 12, "modal": "Expensive indulgence, small growth reward."},
-		{"type": TileType.CATEGORY, "category": PlantCategory.LUXURY, "name": "Fancy Car Ride", "cost": 320, "growth": 14, "modal": "Flashy spend grows your luxury plant."},
-		{"type": TileType.CATEGORY, "category": PlantCategory.LUXURY, "name": "Fine Dining", "cost": 220, "growth": 10, "modal": "Expensive meal, moderate growth."},
-		{"type": TileType.CATEGORY, "category": PlantCategory.LUXURY, "name": "Gadget Upgrade", "cost": 300, "growth": 15, "modal": "Technology spend fuels your luxury plant."}
+		{"type": TileType.CATEGORY, "category": "Luxury", "name": "Designer Clothes", "cost": 280, "growth": 12, "modal": "Expensive indulgence, small growth reward."},
+		{"type": TileType.CATEGORY, "category": "Luxury", "name": "Fancy Car Ride", "cost": 320, "growth": 14, "modal": "Flashy spend grows your luxury plant."},
+		{"type": TileType.CATEGORY, "category": "Luxury", "name": "Fine Dining", "cost": 220, "growth": 10, "modal": "Expensive meal, moderate growth."},
+		{"type": TileType.CATEGORY, "category": "Luxury", "name": "Gadget Upgrade", "cost": 300, "growth": 15, "modal": "Technology spend fuels your luxury plant."}
 	]
 	
 	# 4 Special tiles

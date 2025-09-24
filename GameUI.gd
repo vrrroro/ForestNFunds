@@ -59,11 +59,11 @@ func show_tile_modal(tile):
 	modal_skip_button.visible = true
 	modal_close_button.visible = false
 	
-	if tile.type == main_game.TileType.CATEGORY:
+	if tile.type == 0:  # CATEGORY
 		modal_spend_button.text = "Spend ₹" + str(tile.cost) + " (Growth +" + str(tile.growth) + ")"
-	elif tile.type == main_game.TileType.INVESTMENT:
+	elif tile.type == 1:  # INVESTMENT
 		modal_spend_button.text = "Invest ₹" + str(tile.cost)
-	elif tile.type == main_game.TileType.GAMBLE:
+	elif tile.type == 2:  # GAMBLE
 		modal_spend_button.text = "Gamble ₹" + str(tile.cost)
 	
 	modal.visible = true
@@ -76,19 +76,19 @@ func _on_spend_button_pressed():
 	if current_tile == null:
 		return
 	
-	if current_tile.type == main_game.TileType.CATEGORY:
+	if current_tile.type == 0:  # CATEGORY
 		if main_game.spend_money(current_tile.cost):
 			main_game.add_plant_growth(current_tile.category, current_tile.growth)
 			main_game.skip_count = 0  # Reset skip count on spend
 		else:
 			print("Not enough money!")
 	
-	elif current_tile.type == main_game.TileType.INVESTMENT:
+	elif current_tile.type == 1:  # INVESTMENT
 		if main_game.spend_money(current_tile.cost):
 			main_game.investments.append(current_tile.cost)
 			main_game.skip_count = 0  # Reset skip count on spend
 	
-	elif current_tile.type == main_game.TileType.GAMBLE:
+	elif current_tile.type == 2:  # GAMBLE
 		if main_game.spend_money(current_tile.cost):
 			var won = randf() < 0.5  # 50% chance
 			if won:

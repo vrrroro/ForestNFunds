@@ -11,8 +11,12 @@ enum GrowthStage {
 var growth_stage: GrowthStage = GrowthStage.SEED
 var growth_amount: int = 0
 var plant_category: String = ""
+var sprite: Sprite2D
 
 func _ready():
+	# Create sprite node
+	sprite = Sprite2D.new()
+	add_child(sprite)
 	update_visual()
 
 func set_growth(amount: int, category: String):
@@ -32,61 +36,32 @@ func update_growth_stage():
 		growth_stage = GrowthStage.SEED
 
 func update_visual():
-	queue_redraw()
+	if sprite:
+		var texture_path = get_sprite_path()
+		if texture_path != "":
+			var texture = load(texture_path)
+			if texture:
+				sprite.texture = texture
+				# Scale the sprite to appropriate size
+				sprite.scale = Vector2(0.3, 0.3)  # Adjust scale as needed
 
-func _draw():
-	# Draw plant based on growth stage and category
-	var color = get_category_color()
-	var size = get_stage_size()
+func get_sprite_path() -> String:
+	var stage_name = ""
+	match growth_stage:
+		GrowthStage.SEED:
+			stage_name = "seed"
+		GrowthStage.SAPLING:
+			stage_name = "sapling"
+		GrowthStage.PLANT:
+			stage_name = "plant"
+		GrowthStage.FULL_FLOWERED:
+			# Handle different naming conventions for full-flowered stage
+			if plant_category == "Food":
+				stage_name = "flowered"
+			elif plant_category == "Travel" or plant_category == "Luxury":
+				stage_name = "fully-flowered"
+			else:
+				stage_name = "full-flowered"
 	
-	match growth_stage:
-		GrowthStage.SEED:
-			draw_circle(Vector2.ZERO, size, color)
-		GrowthStage.SAPLING:
-			draw_circle(Vector2.ZERO, size, color)
-			draw_line(Vector2(0, -size), Vector2(0, size * 2), color, 3)
-		GrowthStage.PLANT:
-			draw_circle(Vector2.ZERO, size, color)
-			draw_line(Vector2(0, -size), Vector2(0, size * 2), color, 4)
-			# Draw leaves
-			draw_line(Vector2(-size/2, -size/2), Vector2(size/2, -size/2), color, 2)
-			draw_line(Vector2(-size/2, size/2), Vector2(size/2, size/2), color, 2)
-		GrowthStage.FULL_FLOWERED:
-			draw_circle(Vector2.ZERO, size, color)
-			draw_line(Vector2(0, -size), Vector2(0, size * 2), color, 5)
-			# Draw leaves
-			draw_line(Vector2(-size/2, -size/2), Vector2(size/2, -size/2), color, 3)
-			draw_line(Vector2(-size/2, size/2), Vector2(size/2, size/2), color, 3)
-			# Draw flowers
-			draw_circle(Vector2(-size/2, -size/2), size/4, Color.YELLOW)
-			draw_circle(Vector2(size/2, -size/2), size/4, Color.YELLOW)
-			draw_circle(Vector2(-size/2, size/2), size/4, Color.YELLOW)
-			draw_circle(Vector2(size/2, size/2), size/4, Color.YELLOW)
-
-func get_category_color() -> Color:
-	match plant_category:
-		"Food":
-			return Color.GREEN
-		"Health":
-			return Color.RED
-		"Education":
-			return Color.BLUE
-		"Travel":
-			return Color.CYAN
-		"Luxury":
-			return Color.PURPLE
-		_:
-			return Color.WHITE
-
-func get_stage_size() -> float:
-	match growth_stage:
-		GrowthStage.SEED:
-			return 8.0
-		GrowthStage.SAPLING:
-			return 12.0
-		GrowthStage.PLANT:
-			return 16.0
-		GrowthStage.FULL_FLOWERED:
-			return 20.0
-		_:
-			return 8.0
+	var sprite_data = load("res://PlantSprites.gd").new()
+	return sprite_data.get_plant_sprite_path(plant_category, stage_name)

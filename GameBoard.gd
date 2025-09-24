@@ -35,11 +35,11 @@ func update_tiles(tile_data):
 		var sprite = tile_sprites[i]
 		
 		if sprite.has_method("set_tile_data"):
-			var type = sprite.TileType.CATEGORY
+			var type = 0  # CATEGORY
 			if tile.type == 1:  # INVESTMENT
-				type = sprite.TileType.INVESTMENT
+				type = 1
 			elif tile.type == 2:  # GAMBLE
-				type = sprite.TileType.GAMBLE
+				type = 2
 			
 			sprite.set_tile_data(type, tile.name, tile.cost, tile.growth, tile.category)
 
