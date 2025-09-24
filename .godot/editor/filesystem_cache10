@@ -1,0 +1,17 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1758734016
+DiceAnimation.gd::GDScript::4137161993704992768::1758733988::0::1::::DiceAnimation<>Node2D<><>0<>0<><>::
+DiceScene.tscn::PackedScene::4752120449781670759::1758733865::0::1::::<><><>0<>0<><>::uid://by7cpol43hvrs::::res://DiceAnimation.gd<>uid://d16cf2wfbyvir::::res://sprites/dice_6.png
+ExampleUsage.gd::GDScript::4263149654029423660::1758732264::0::1::::<>Node2D<><>0<>0<><>::
+README.md::TextFile::-1::1758733692::0::1::::<><><>0<>0<><>::
+SimpleDiceTest.gd::GDScript::6950118944785512892::1758733988::0::1::::<>Node2D<><>0<>0<><>::
+SimpleDiceTest.tscn::PackedScene::-1::1758733988::0::1::::<><><>0<>0<><>::res://SimpleDiceTest.gd
+TestController.gd::GDScript::8492537829826021847::1758733449::0::1::::<>Node2D<><>0<>0<><>::
+TestDice.tscn::PackedScene::7138541133474771816::1758733302::0::1::::<><><>0<>0<><>::res://DiceAnimation.gd<>uid://d16cf2wfbyvir::::res://sprites/dice_6.png<>res://TestController.gd
+::res://sprites/::1758732803
+dice_1.png::CompressedTexture2D::5933580011174484633::1758686947::1758732803::1::::<><><>0<>0<>d569e364b3b26d705d78d3ef3176677c<>res://.godot/imported/dice_1.png-af27621001bf62f79369faf8cfc45ee4.ctex::
+dice_2.png::CompressedTexture2D::8625876673929799132::1758686947::1758732803::1::::<><><>0<>0<>5e8657b41f577c087d0929111ef4acab<>res://.godot/imported/dice_2.png-159365099176859d61cddd1b50dd9e45.ctex::
+dice_3.png::CompressedTexture2D::2893291668567934068::1758686947::1758732803::1::::<><><>0<>0<>390684cf5cdb198af24c9d60c3b47bf9<>res://.godot/imported/dice_3.png-98e8a4180e60e61ae0b122183dfabf03.ctex::
+dice_4.png::CompressedTexture2D::5222935939539483213::1758686947::1758732803::1::::<><><>0<>0<>d501f3af61e627f098803aa26287aa88<>res://.godot/imported/dice_4.png-0a8e9d46154f248413ce623b149fb255.ctex::
+dice_5.png::CompressedTexture2D::4750173684949256588::1758686947::1758732803::1::::<><><>0<>0<>4f040b7462a6d30072b8f4cabc377578<>res://.godot/imported/dice_5.png-0108e3a0ace0e773810674af92f8681a.ctex::
+dice_6.png::CompressedTexture2D::9048299511344687973::1758686947::1758732803::1::::<><><>0<>0<>1a4f755b081f8cadc2d796558732fd64<>res://.godot/imported/dice_6.png-c1a65ee46d4dc1e24b135d409cd2bf23.ctex::

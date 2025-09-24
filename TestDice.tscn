@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8x7y2k3m4n5q"]
+
+[ext_resource type="Script" path="res://DiceAnimation.gd" id="1_0x8y9"]
+[ext_resource type="Texture2D" uid="uid://d16cf2wfbyvir" path="res://sprites/dice_6.png" id="2_ts5mm"]
+[ext_resource type="Script" path="res://TestController.gd" id="3_test_controller"]
+
+[node name="TestDice" type="Node2D"]
+
+[node name="DiceAnimation" type="Node2D" parent="."]
+script = ExtResource("1_0x8y9")
+position = Vector2(400, 300)
+
+[node name="Sprite2D" type="Sprite2D" parent="DiceAnimation"]
+texture = ExtResource("2_ts5mm")
+
+[node name="AnimationTimer" type="Timer" parent="DiceAnimation"]
+
+[node name="TestController" type="Node2D" parent="."]
+script = ExtResource("3_test_controller")
+
+[node name="Label" type="Label" parent="TestController"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -50.0
+offset_right = 200.0
+offset_bottom = 50.0
+text = "Press SPACE to roll dice!"
+horizontal_alignment = 1
+vertical_alignment = 1

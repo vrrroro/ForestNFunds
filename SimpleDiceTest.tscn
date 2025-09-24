@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://simple_dice_test"]
+
+[ext_resource type="Script" path="res://SimpleDiceTest.gd" id="1_simple_test"]
+
+[node name="SimpleDiceTest" type="Node2D"]
+script = ExtResource("1_simple_test")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -100.0
+offset_right = 200.0
+offset_bottom = -50.0
+text = "Press SPACE to roll dice!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationTimer" type="Timer" parent="."]
