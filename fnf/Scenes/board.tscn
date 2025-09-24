@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://c1vjp6y76bvuy"]
+
+[node name="Board" type="Node2D"]
+
+[node name="TileContainer" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="TileContainer"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="TileContainer"]
+
+[node name="Sprite2D3" type="Sprite2D" parent="TileContainer"]
+
+[node name="Sprite2D4" type="Sprite2D" parent="TileContainer"]
+
+[node name="Sprite2D5" type="Sprite2D" parent="TileContainer"]
+
+[node name="Sprite2D6" type="Sprite2D" parent="TileContainer"]
+
+[node name="Sprite2D7" type="Sprite2D" parent="TileContainer"]
+
+[node name="Sprite2D8" type="Sprite2D" parent="TileContainer"]
+
+[node name="Sprite2D9" type="Sprite2D" parent="TileContainer"]
+
+[node name="Sprite2D10" type="Sprite2D" parent="TileContainer"]
+
+[node name="Sprite2D11" type="Sprite2D" parent="TileContainer"]
+
+[node name="Sprite2D12" type="Sprite2D" parent="TileContainer"]
+
+[node name="Sprite2D13" type="Sprite2D" parent="TileContainer"]
+
+[node name="Sprite2D14" type="Sprite2D" parent="TileContainer"]
+
+[node name="Sprite2D15" type="Sprite2D" parent="TileContainer"]
+
+[node name="Sprite2D16" type="Sprite2D" parent="TileContainer"]
+
+[node name="Sprite2D17" type="Sprite2D" parent="TileContainer"]
+
+[node name="Sprite2D18" type="Sprite2D" parent="TileContainer"]
+
+[node name="Sprite2D19" type="Sprite2D" parent="TileContainer"]
+
+[node name="Sprite2D20" type="Sprite2D" parent="TileContainer"]
+
+[node name="Sprite2D21" type="Sprite2D" parent="TileContainer"]
+
+[node name="Sprite2D22" type="Sprite2D" parent="TileContainer"]
+
+[node name="Sprite2D23" type="Sprite2D" parent="TileContainer"]
+
+[node name="Sprite2D24" type="Sprite2D" parent="TileContainer"]
+
+[node name="Player" type="Sprite2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
