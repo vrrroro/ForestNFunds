@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8x7y2k3m4n5p"]
+
+[ext_resource type="Script" uid="uid://by7cpol43hvrs" path="res://DiceAnimation.gd" id="1_0x8y9"]
+[ext_resource type="Texture2D" uid="uid://d16cf2wfbyvir" path="res://sprites/dice_6.png" id="2_ts5mm"]
+
+[node name="DiceScene" type="Node2D"]
+script = ExtResource("1_0x8y9")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 2)
+scale = Vector2(10.374999, 10.374999)
+texture = ExtResource("2_ts5mm")
+
+[node name="AnimationTimer" type="Timer" parent="."]
